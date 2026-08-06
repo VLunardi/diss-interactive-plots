@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # IMPORTANT: set this to the folder that contains index.html + your plot html files
-          path: .
+          path: ./docs
 
       - name: Deploy to GitHub Pages
         id: deployment
