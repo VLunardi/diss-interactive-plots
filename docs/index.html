@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>diss-interactive-plots</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 2rem;
+        line-height: 1.5;
+      }
+      h1 {
+        margin-bottom: 0.25rem;
+      }
+      .muted {
+        color: #666;
+        margin-top: 0;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      li {
+        margin: 0.4rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interactive plots</h1>
+    <p class="muted">Contextual embedding distribution for lexical-semantic change case studies.</p>
+
+    <p>
+      Add your Plotly HTML files to <code>docs/plots/</code> and list them in
+      <code>PLOT_FILES</code> below.
+    </p>
+
+    <ul id="plot-list"></ul>
+
+    <script>
+      const PLOT_FILES = [
+        // Example: "my-first-plot.html",
+      ];
+
+      const list = document.getElementById("plot-list");
+
+      if (PLOT_FILES.length === 0) {
+        const empty = document.createElement("li");
+        empty.textContent = "No plots listed yet. Add files to docs/plots/ and update PLOT_FILES.";
+        list.appendChild(empty);
+      } else {
+        for (const file of PLOT_FILES) {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `./plots/${file}`;
+          link.textContent = file;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          item.appendChild(link);
+          list.appendChild(item);
+        }
+      }
+    </script>
+  </body>
+</html>
